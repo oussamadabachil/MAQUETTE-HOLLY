@@ -241,7 +241,7 @@
   margin-top: -2rem;
   padding: 1rem;
   height: auto;
-  background-color: rgb(204, 170, 204);
+  background-color: #e5e5e5;
   padding: 1.5rem;
 }
 .text-container {
@@ -249,11 +249,12 @@
   align-items: flex-end;
 
   justify-content: center;
-
+  margin-left: .6rem;
+  margin-top: 1rem;
   position: relative;
   float: left;
-  background-color: #caca;
-  width: 49.5%;
+  background-color:grey;
+  width: 49%;
   height: 100vh;
 }
 .text-container > p {
@@ -261,6 +262,8 @@
   color: white;
 }
 .imgRight {
+  margin-top: 1rem;
+
   justify-content: center;
   display: flex;
   float: right;
@@ -390,7 +393,7 @@
     transition: all 0.3s;
   }
   .block-pres-change-outfit > ul > .outfit:first-child{
-    min-width:9rem;
+    min-width:12rem;
 
 
   }
