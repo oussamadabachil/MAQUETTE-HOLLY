@@ -4,12 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container-flex-outfit");
   let scrollAmount = 0;
 
-  let o = 0
-  let pas = 200
+  let o = 0;
+  let pas = 200;
   let width = container.o;
   let titleChangeOutfit = document.querySelector(
     ".title-outift-change-and-desc-outfit>h2"
   );
+
 
   let descriptionChangeOutfit = document.querySelector(
     ".description-change-outfit"
@@ -35,6 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
       effectFlashing.classList.remove("flashing-effect");
     }, "600");
 
+
+    buttonVestes.classList.add("actif")
+    buttonChemises.classList.remove("actif")
+    buttonSweat.classList.remove("actif")
     titleChangeOutfit.textContent = "Vestes / Blousons";
     descriptionChangeOutfit.textContent =
       "Les vestes et blousons sont des vêtements de dessus qui peuvent être portés par-dessus d'autres vêtements pour fournir une protection supplémentaire contre les intempéries, le froid ou simplement pour ajouter une couche supplémentaire à un look. Ils peuvent être faits de différents matériaux, tels que le cuir, le denim, la laine, le polyester, le nylon ou le coton, et viennent dans une variété de styles, de coupes et de couleurs pour convenir à différents goûts et occasions";
@@ -42,6 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   buttonChemises.addEventListener("click", () => {
     titleChangeOutfit.textContent = "Chemises";
+    buttonChemises.classList.add("actif")
+    buttonVestes.classList.remove("actif")
+    buttonSweat.classList.remove("actif")
 
     effectFlashing.classList.add("flashing-effect");
     descriptionChangeOutfit.textContent =
@@ -52,6 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   buttonSweat.addEventListener("click", () => {
+    buttonSweat.classList.add("actif")
+    buttonVestes.classList.remove("actif")
+    buttonChemises.classList.remove("actif")
+
     titleChangeOutfit.textContent = "Derbies";
     effectFlashing.classList.add("flashing-effect");
     descriptionChangeOutfit.textContent =
@@ -63,49 +75,43 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function scrollRight() {
-
-
-
-    if(scrollAmount==200){
-        pas=400
+    if (scrollAmount == 200) {
+      pas = 400;
     }
-    if(scrollAmount==600){
-        pas=200
+    if (scrollAmount == 600) {
+      pas = 200;
     }
-    if(scrollAmount==1000){
-        pas=400
+    if (scrollAmount == 1000) {
+      pas = 400;
     }
-    if(scrollAmount==1400){
-        scrollAmount=1400
-        pas=0
+    if (scrollAmount == 1400) {
+      scrollAmount = 1400;
+      pas = 0;
     }
     container.scrollTo({
       top: 0,
       left: (scrollAmount += pas),
       behavior: "smooth",
     });
-    console.log(scrollAmount)
+    console.log(scrollAmount);
 
-    if(scrollAmount<0){
-        scrollAmount=0
+    if (scrollAmount < 0) {
+      scrollAmount = 0;
     }
-    
-
-
   }
 
   // fonction pour faire défiler la div vers la gauche
   function scrollLeft() {
-    pas =200
+    pas = 200;
 
-    if(scrollAmount==1200){
-        pas = 400
+    if (scrollAmount == 1200) {
+      pas = 400;
     }
-    if(scrollAmount==400){
-        pas = 400
+    if (scrollAmount == 400) {
+      pas = 400;
     }
-    if(scrollAmount==0){
-        pas = 200
+    if (scrollAmount == 0) {
+      pas = 200;
     }
 
     container.scrollTo({
@@ -114,12 +120,10 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: "smooth",
     });
 
-
-    if(scrollAmount<0){
-        scrollAmount=0
+    if (scrollAmount < 0) {
+      scrollAmount = 0;
     }
-    console.log(scrollAmount)
-
+    console.log(scrollAmount);
   }
 
   prevBtn.addEventListener("click", () => {
