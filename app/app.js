@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container-flex-outfit");
   let scrollAmount = 0;
 
+  let o = 0
   let pas = 200
   let width = container.o;
   let titleChangeOutfit = document.querySelector(
