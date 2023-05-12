@@ -130,19 +130,19 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollRight();
   });
 
-  const observer = new IntersectionObserver((entries) => {
-    // Loop over the entries
-    entries.forEach((entry) => {
-      // If the element is visible
-      if (entry.isIntersecting) {
-        // Add the animation class
-        entry.target.classList.add("image-animation");
-      }
-    });
-  });
+  // const observer = new IntersectionObserver((entries) => {
+  //   // Loop over the entries
+  //   entries.forEach((entry) => {
+  //     // If the element is visible
+  //     if (entry.isIntersecting) {
+  //       // Add the animation class
+  //       entry.target.classList.add("image-animation");
+  //     }
+  //   });
+  // });
 
-  const viewbox = document.querySelectorAll("body>div");
-  viewbox.forEach((image) => {
-    observer.observe(image);
-  });
+  // const viewbox = document.querySelectorAll("body>div");
+  // viewbox.forEach((image) => {
+  //   observer.observe(image);
+  // });
 });
