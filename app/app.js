@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ".title-outift-change-and-desc-outfit>h2"
   );
 
-
   let descriptionChangeOutfit = document.querySelector(
     ".description-change-outfit"
   );
@@ -36,20 +35,26 @@ document.addEventListener("DOMContentLoaded", () => {
       effectFlashing.classList.remove("flashing-effect");
     }, "600");
 
+    document.querySelector(".l").classList.remove("derbiesambiance");
+    document.querySelector(".l").classList.remove("chemiseambiance");
+    document.querySelector(".l").classList.add("vbambiance");
 
-    buttonVestes.classList.add("actif")
-    buttonChemises.classList.remove("actif")
-    buttonSweat.classList.remove("actif")
+    buttonVestes.classList.add("actif");
+    buttonChemises.classList.remove("actif");
+    buttonSweat.classList.remove("actif");
     titleChangeOutfit.textContent = "Vestes / Blousons";
     descriptionChangeOutfit.textContent =
       "Les vestes et blousons sont des vêtements de dessus qui peuvent être portés par-dessus d'autres vêtements pour fournir une protection supplémentaire contre les intempéries, le froid ou simplement pour ajouter une couche supplémentaire à un look. Ils peuvent être faits de différents matériaux, tels que le cuir, le denim, la laine, le polyester, le nylon ou le coton, et viennent dans une variété de styles, de coupes et de couleurs pour convenir à différents goûts et occasions";
   });
 
   buttonChemises.addEventListener("click", () => {
+    document.querySelector(".l").classList.remove("vbambiance");
+    document.querySelector(".l").classList.remove("derbiesambiance");
+    document.querySelector(".l").classList.add("chemiseambiance");
     titleChangeOutfit.textContent = "Chemises";
-    buttonChemises.classList.add("actif")
-    buttonVestes.classList.remove("actif")
-    buttonSweat.classList.remove("actif")
+    buttonChemises.classList.add("actif");
+    buttonVestes.classList.remove("actif");
+    buttonSweat.classList.remove("actif");
 
     effectFlashing.classList.add("flashing-effect");
     descriptionChangeOutfit.textContent =
@@ -60,9 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   buttonSweat.addEventListener("click", () => {
-    buttonSweat.classList.add("actif")
-    buttonVestes.classList.remove("actif")
-    buttonChemises.classList.remove("actif")
+    document.querySelector(".l").classList.remove("vbambiance");
+    document.querySelector(".l").classList.remove("chemiseambiance");
+    document.querySelector(".l").classList.add("derbiesambiance");
+    
+
+    buttonSweat.classList.add("actif");
+    buttonVestes.classList.remove("actif");
+    buttonChemises.classList.remove("actif");
 
     titleChangeOutfit.textContent = "Derbies";
     effectFlashing.classList.add("flashing-effect");
@@ -149,4 +159,67 @@ document.addEventListener("DOMContentLoaded", () => {
   // viewbox.forEach((image) => {
   //   observer.observe(image);
   // });
+
+
+
+  let newsButton = document.querySelector("#news");
+  let accessButton = document.querySelector("#access");
+  let collectionButton1 = document.querySelector(".collection");
+    let collectionButton = document.querySelector("#collection");
+  let shoesButton = document.querySelector("#shoes");
+
+  let menuCollection = document.querySelector(".submenuCollection");
+  let menuNews = document.querySelector(".submenuNews");
+
+  collectionButton.addEventListener("mouseenter", () => {
+    document.querySelector(".menu").classList.add("menu-scroll");
+    menuCollection.classList.replace("submenuCollection", "show");
+    menuNews.classList.replace("show", "submenuNews");
+  });
+
+  document.querySelector(".menu").addEventListener("mouseleave", () => {
+    if(scrollY < 50){
+    document.querySelector(".menu").classList.remove("menu-scroll");
+    }
+    menuCollection.classList.replace("show", "submenuCollection");
+    menuNews.classList.replace("show", "submenuNews");
+  });
+
+
+  shoesButton.addEventListener("mouseenter", () => {
+    document.querySelector(".menu").classList.add("menu-scroll");
+    menuNews.classList.replace("submenuNews", "show");
+    menuCollection.classList.replace("show", "submenuCollection");
+  });
+
+  newsButton.addEventListener("mouseenter", () => {
+
+    menuNews.classList.replace("show", "submenuNews");
+    menuCollection.classList.replace("show", "submenuCollection");
+  })
+
+  accessButton.addEventListener("mouseenter", () => {
+    menuNews.classList.replace("show", "submenuNews");
+    menuCollection.classList.replace("show", "submenuCollection");  
+  })
+
+
+
+  // collectionButton1.addEventListener("mouseleave", () => {
+    
+  //   menuCollection.classList.replace("show", "submenuCollection");
+  //   menuNews.classList.replace("show", "submenuNews");
+  // }
+  // );
+
+
+  window.addEventListener("scroll", () => {
+    if(scrollY > 50){
+      console.log("ok");
+
+      document.querySelector(".menu").classList.add("menu-scroll");
+    }else{
+      document.querySelector(".menu").classList.remove("menu-scroll");
+    }
+  })
 });
