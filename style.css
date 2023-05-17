@@ -909,4 +909,8 @@ cha ger le bas */
     margin-left: 2.5rem;
   }
 
+  html{
+    overflow-x: hidden;
+  }
+
 }
