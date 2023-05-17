@@ -432,9 +432,10 @@ cha ger le bas */
   flex-shrink: 0;
   margin: 0 auto;
   position: relative;
-  width: 19rem;
+  /* width: 19rem; */
+  width: 22rem;
   border-radius: 0.25rem;
-  height: 35rem;
+  height: 39rem;
   scroll-snap-align: start;
 }
 .shoes-flexbox>.item{
@@ -911,6 +912,10 @@ cha ger le bas */
 
   html{
     overflow-x: hidden;
+  }
+  .container-flex-outfit-2 > .item {
+    width: 19rem;
+    height: 35rem;
   }
 
 }
