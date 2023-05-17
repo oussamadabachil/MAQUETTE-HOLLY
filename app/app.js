@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.getElementById("left");
   const nextBtn = document.getElementById("right");
-  const container = document.querySelector(".container-flex-outfit");
+  const container1 = document.querySelector(".container-flex-outfit.vb-flexbox");
+  const container2 = document.querySelector(".container-flex-outfit.chemises-flexbox");
+  const container3 = document.querySelector(".container-flex-outfit.shoes-flexbox");
+  
   let scrollAmount = 0;
 
   let o = 0;
   let pas = 200;
-  let width = container.o;
+  let width = container1.o;
   let titleChangeOutfit = document.querySelector(
     ".title-outift-change-and-desc-outfit>h2"
   );
@@ -26,10 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let choixOutfit = 0; // la variable choixOutfit contient le choix de tenue vestimentaire
 
-  console.log(buttonVestes);
 
   buttonVestes.addEventListener("click", () => {
     effectFlashing.classList.add("flashing-effect");
+    document.querySelector(".vb-flexbox").style.display = "flex";
+    document.querySelector(".chemises-flexbox").style.display = "none";
+    document.querySelector(".shoes-flexbox").style.display = "none";
 
     setTimeout(() => {
       effectFlashing.classList.remove("flashing-effect");
@@ -48,6 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   buttonChemises.addEventListener("click", () => {
+    document.querySelector(".vb-flexbox").style.display = "none";
+    document.querySelector(".chemises-flexbox").style.display = "flex";
+    document.querySelector(".shoes-flexbox").style.display = "none";
     document.querySelector(".l").classList.remove("vbambiance");
     document.querySelector(".l").classList.remove("derbiesambiance");
     document.querySelector(".l").classList.add("chemiseambiance");
@@ -65,6 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   buttonSweat.addEventListener("click", () => {
+    document.querySelector(".vb-flexbox").style.display = "none";
+    document.querySelector(".chemises-flexbox").style.display = "none";
+    document.querySelector(".shoes-flexbox").style.display = "flex";
     document.querySelector(".l").classList.remove("vbambiance");
     document.querySelector(".l").classList.remove("chemiseambiance");
     document.querySelector(".l").classList.add("derbiesambiance");
@@ -85,53 +96,58 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function scrollRight() {
-    if (scrollAmount == 200) {
-      pas = 400;
-    }
-    if (scrollAmount == 600) {
-      pas = 200;
-    }
-    if (scrollAmount == 1000) {
-      pas = 400;
-    }
-    if (scrollAmount == 1400) {
-      scrollAmount = 1400;
-      pas = 0;
-    }
-    container.scrollTo({
+    pas = 200;
+
+    if(scrollAmount==400){
+      pas=200}
+      if (scrollAmount>= 600) {
+        scrollAmount =600
+        pas=0;
+      }
+    container1.scrollTo({
       top: 0,
       left: (scrollAmount += pas),
       behavior: "smooth",
     });
-    console.log(scrollAmount);
+    container2.scrollTo({
+      top: 0,
+      left: (scrollAmount += pas),
+      behavior: "smooth",
+    });
+    container3.scrollTo({
+      top: 0,
+      left: (scrollAmount += pas),
+      behavior: "smooth",
+    });
 
-    if (scrollAmount < 0) {
-      scrollAmount = 0;
-    }
+    console.log('scrollAmount=>',scrollAmount);
+    console.log("pas=>",pas)
+
+   
   }
 
   // fonction pour faire défiler la div vers la gauche
   function scrollLeft() {
     pas = 200;
-
-    if (scrollAmount == 1200) {
-      pas = 400;
-    }
-    if (scrollAmount == 400) {
-      pas = 400;
-    }
-    if (scrollAmount == 0) {
-      pas = 200;
-    }
-
-    container.scrollTo({
+    container1.scrollTo({
+      top: 0,
+      left: (scrollAmount -= pas),
+      behavior: "smooth",
+    });
+    container2.scrollTo({
+      top: 0,
+      left: (scrollAmount -= pas),
+      behavior: "smooth",
+    });
+    container3.scrollTo({
       top: 0,
       left: (scrollAmount -= pas),
       behavior: "smooth",
     });
 
-    if (scrollAmount < 0) {
-      scrollAmount = 0;
+    if (scrollAmount<0) {
+      scrollAmount =0
+      pas=0;
     }
     console.log(scrollAmount);
   }
@@ -215,7 +231,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", () => {
     if(scrollY > 50){
-      console.log("ok");
 
       document.querySelector(".menu").classList.add("menu-scroll");
     }else{
