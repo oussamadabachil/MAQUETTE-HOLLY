@@ -223,6 +223,9 @@ html {
   background-color: white;
 }
 .menu {
+    top: 0;
+    left: 0;
+    right:0;
   z-index: 300;
   transition: all .3s;
 
@@ -749,7 +752,7 @@ cha ger le bas */
   justify-content: center;
   display: flex;
   float: right;
-  background-image: url("./costardAmbiance1.jpg");
+  background-image: url("./costardambiance11.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -807,6 +810,13 @@ cha ger le bas */
   
 }
 
+@media screen and (max-width:844px) {
+    .text-container{
+        margin-left: 0rem;
+    }
+    
+}
+
 @media screen and (max-width: 720px) {
   .block-pres-od {
     background-image: url("screenVoerge.jpg");
@@ -856,7 +866,7 @@ cha ger le bas */
     justify-content: center;
     position: relative;
     float: left;
-    background-image: url("./costardAmbiance1.jpg");
+    background-image: url("./costardAmbiance11.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -897,7 +907,7 @@ cha ger le bas */
   }
 
   .div-container-text {
-    background-color: #e5e5e5;
+    background-color: #24222c;
   }
   .block-pres-od > h1 {
     font-size: 1.35rem;

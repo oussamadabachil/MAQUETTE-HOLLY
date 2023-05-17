@@ -1,0 +1,611 @@
+<nav class="navbar">
+    <ul class="menu">
+      <li>
+        <a href="#">HOLLYGHOST</a>
+      </li>
+  
+      <li class="access">
+        <span>
+          <a id="access" href="">Accessoires</a>
+        </span>
+      </li>
+      <li class="shoes">
+        <span>
+          <a id="shoes" href="">Chaussures</a>
+        </span>
+      </li>
+      <li class="collection">
+        <span>
+          <a id="collection" href="">Vêtements</a>
+        </span>
+      </li>
+      <li class="news">
+        <span>
+          <a id="news" href="https://hollyghost.fr/fr/12-nouveautes-homme"
+            >Nouveautés</a
+          >
+        </span>
+      </li>
+  
+      <ul class="submenuCollection submenu">
+        <li>
+          <a href="#"
+            ><div class="submenu_image_1">
+              <ul>
+                <li class="title-outfit">Vêtements</li>
+                <ul>
+                  <ul>
+                    <li>
+                      <a href="https://hollyghost.fr/fr/62-doudounes"
+                        >Doudounes</a
+                      >
+                    </li>
+  
+                    <li>
+                      <a href="https://hollyghost.fr/fr/37-blouson-vestes"
+                        >Vestes / Blousons</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://hollyghost.fr/fr/80-costumes-smokings"
+                        >Costumes</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://hollyghost.fr/fr/118-pantalons"
+                        >Pantalons</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://hollyghost.fr/fr/36-chemises">Chemises</a>
+                    </li>
+                    <li>
+                      <a href="https://hollyghost.fr/fr/34-polos">Polos</a>
+                    </li>
+                    <li>
+                      <a href="https://hollyghost.fr/fr/42-pulls">Pulls</a>
+                    </li>
+                    <li>
+                      <a href="https://hollyghost.fr/fr/40-sweats">Sweats</a>
+                    </li>
+                    <li>
+                      <a href="https://hollyghost.fr/fr/79-doudounes-sans-manches"
+                        >Doudounes sans manches</a
+                      >
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <a href="https://hollyghost.fr/fr/32-jeans">Jeans</a>
+                    </li>
+                    <li>
+                      <a href="https://hollyghost.fr/fr/38-bermuda-shorts"
+                        >Shorts / Bermudas</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://hollyghost.fr/fr/39-joggings">Joggins</a>
+                    </li>
+                    <li>
+                      <a href="https://hollyghost.fr/fr/118-pantalons"
+                        >Pantalons</a
+                      >
+                    </li>
+                  </ul>
+                </ul>
+              </ul>
+            </div></a>
+        </li>
+      
+        <li>
+          <a href="#"><div class="submenu_image_2"></div></a>
+        </li>
+        <li>
+          <a href="#"><div class="submenu_image_3"></div></a>
+        </li>
+        <li>
+          <a href="#"><div class="submenu_image_4"></div> </a>
+        </li>
+      </ul>
+      <ul class="submenuNews submenu">
+        <li>
+          <a href="#"><div class="submenu_image_5"></div></a>
+        </li>
+        <li>
+          <a href="https://hollyghost.fr/fr/44-chaussures"
+            ><div class="submenu_image_6">
+              <div class="opacity-div-menu">
+                <p>Derbies</p>
+              </div>
+            </div></a
+          >
+        </li>
+        <li>
+          <a href="https://hollyghost.fr/fr/129-bottines"
+            ><div class="submenu_image_7">
+              <div class="opacity-dev-menu">
+                <p>Bottines</p>
+              </div>
+            </div></a
+          >
+        </li>
+        <li>
+          <a href="https://hollyghost.fr/fr/104-baskets"
+            ><div class="submenu_image_8">
+              <div class="opacity-dev-menu">
+                <p>Baskets</p>
+              </div>
+            </div></a
+          >
+        </li>
+      </ul>
+    </ul>
+  
+    <script>
+  
+  
+      let newsButton = document.querySelector("#news");
+      let accessButton = document.querySelector("#access");
+      let collectionButton1 = document.querySelector(".collection");
+      let collectionButton = document.querySelector("#collection");
+      let shoesButton = document.querySelector("#shoes");
+  
+      let menuCollection = document.querySelector(".submenuCollection");
+      let menuNews = document.querySelector(".submenuNews");
+  
+      collectionButton.addEventListener("mouseenter", () => {
+        document.querySelector(".menu").classList.add("menu-scroll");
+        menuCollection.classList.replace("submenuCollection", "show");
+        menuNews.classList.replace("show", "submenuNews");
+      });
+  
+      document.querySelector(".menu").addEventListener("mouseleave", () => {
+        if (scrollY < 50) {
+          document.querySelector(".menu").classList.remove("menu-scroll");
+        }
+        menuCollection.classList.replace("show", "submenuCollection");
+        menuNews.classList.replace("show", "submenuNews");
+      });
+  
+      shoesButton.addEventListener("mouseenter", () => {
+        document.querySelector(".menu").classList.add("menu-scroll");
+        menuNews.classList.replace("submenuNews", "show");
+        menuCollection.classList.replace("show", "submenuCollection");
+      });
+  
+      newsButton.addEventListener("mouseenter", () => {
+        menuNews.classList.replace("show", "submenuNews");
+        menuCollection.classList.replace("show", "submenuCollection");
+      });
+  
+      accessButton.addEventListener("mouseenter", () => {
+        menuNews.classList.replace("show", "submenuNews");
+        menuCollection.classList.replace("show", "submenuCollection");
+      });
+  
+      // collectionButton1.addEventListener("mouseleave", () => {
+  
+      //   menuCollection.classList.replace("show", "submenuCollection");
+      //   menuNews.classList.replace("show", "submenuNews");
+      // }
+      // );
+  
+      window.addEventListener("scroll", () => {
+        if (scrollY > 50) {
+          document.querySelector(".menu").classList.add("menu-scroll");
+        } else {
+          document.querySelector(".menu").classList.remove("menu-scroll");
+        }
+      });
+    </script>
+  </nav>
+  
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500&family=Playfair+Display&display=swap");
+    * {
+      list-style: none;
+      margin: 0;
+      font-family: "Montserrat";
+      padding: 0;
+      text-decoration: none;
+    }
+    
+    .submenu_image_1 > ul > ul > ul > li > a {
+      text-decoration: none;
+      color: black;
+    }
+    .submenu_image_1 > ul > ul > ul > li {
+      text-align: left;
+      line-height: 2rem;
+    }
+    .submenu_image_1 > ul > ul {
+      width: 90%;
+      padding: 1rem;
+      margin: 0 auto;
+      display: flex;
+    }
+  
+    .navbar {
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      align-items: center;
+    }
+    .submenu_image_1 {
+      background-color: transparent;
+    }
+    .submenu > li > a > div {
+      position: relative;
+    }
+  
+    .submenu > li > a {
+      text-decoration: none;
+    }
+    .submenu > li > a > div > div > p {
+      position: absolute;
+      transition: all 0.3s;
+      transform: translate(-50%, -50%);
+      top: -50%;
+      line-height: 2rem;
+      left: 50%;
+      font-size: 2rem;
+      opacity: 0;
+      visibility: hidden;
+      color: white;
+    }
+    .submenu > li:nth-child(2) > a:hover > div > div > p,
+    .submenu > li:nth-child(3) > a:hover > div > div > p,
+    .submenu > li:nth-child(4) > a:hover > div > div > p {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      opacity: 1;
+      visibility: visible;
+      top: 50%;
+      line-height: 2rem;
+      transition: all 0.3s;
+      left: 50%;
+      font-size: 2rem;
+      color: white;
+    }
+    .submenu_image_5 {
+      background-image: url("./promotion_banniere_11.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+    }
+    .submenu > li:nth-child(2) > a:hover > div > div,
+    .submenu > li:nth-child(3) > a:hover > div > div,
+    .submenu > li:nth-child(4) > a:hover > div > div {
+      opacity: 1;
+      transition: all 0.3s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .title-outfit {
+      text-align: left;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      margin-left: 1rem;
+      color: rgb(28, 28, 29);
+      text-decoration: none;
+    }
+    .submenu > li > a > div > ul > li {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+  
+    .submenu_image_1 > ul > li {
+      font-size: 11112rem;
+      color: black;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+  
+    .submenu > li > a > div > ul > ul > li,
+    .submenu_image_1 > ul > ul > li {
+      line-height: 2.2rem;
+      text-decoration: none;
+      color: black;
+      margin-left: 1.5rem;
+  
+      font-size: 1.1rem;
+      text-align: left;
+    }
+  
+    .submenu_image_1 > ul > ul > li > a {
+      color: black;
+      text-decoration: none;
+    }
+  
+    .submenu_image_2 {
+      background-image: url("./6.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+    }
+    .submenu_image_3 {
+      background-image: url("./7.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+    }
+  
+    .submenu_image_4 {
+      background-image: url("./6.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+    }
+  
+    .submenu_image_6 {
+      background-image: url("./assets/assets_maquette/menushoes/1.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+    }
+    .submenu_image_7 {
+      background-image: url("./assets/assets_maquette/menushoes/2.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+    }
+    .submenu_image_8 {
+      background-image: url("./assets/assets_maquette/menushoes/3.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+    }
+    .submenu > li > a:hover > .opacity-dev-menu {
+      opacity: 1;
+      transition: all 0.3s;
+    }
+    .opacity-dev-menu {
+      opacity: 0;
+      transition: all 0.3s;
+    }
+    .menu > li > a:first-child {
+      float: left;
+      font-size: 2.5rem;
+      color: black;
+      padding: 1rem;
+  
+      text-decoration: none;
+      font-family: Bebas Neue;
+    }
+    .menu > li > span > a {
+      position: relative;
+      font-weight: 400;
+      text-transform: capitalize;
+      padding: 1.3rem;
+      text-align: center;
+      color: black;
+      font-size: 1.2rem;
+      margin-right: 2rem;
+  
+      text-decoration: none;
+      float: right;
+    }
+    .menu > li > span > a:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      z-index: 300;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      background: rgb(0, 0, 0);
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+    .menu > li > span > a:hover:after {
+      width: 100%;
+      left: 0;
+    }
+    .menu-scroll {
+      z-index: 100;
+      transition: all 0.3s;
+      background-color: white;
+    }
+    .menu {
+      background-color: white;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 300;
+      transition: all 0.3s;
+  
+      position: fixed;
+      text-align: center;
+      width: 100%;
+      align-items: center;
+  
+      list-style: none;
+    }
+  
+    .menu > ul:nth-child(2) > li > a > div {
+      background-color: red;
+    }
+  
+    .submenuCollection > li > a > div {
+      margin: 0 auto;
+      width: calc(27rem - 5rem);
+      height: 34rem;
+    }
+    .submenuNews > li > a > div > img {
+      display: block;
+      max-width: 100%;
+    }
+  
+    .show > li > a > div > img {
+      display: block;
+      max-width: 100%;
+    }
+    .show > li > a > div,
+    .submenuCollection > li > a > div,
+    .submenuNews > li > a > div {
+      margin: 0 auto;
+      width: calc(27rem - 5rem);
+      height: 34rem;
+    }
+  
+    .show > li {
+      width: 100%;
+      text-align: center;
+    }
+    .show > li > a {
+      width: 100%;
+  
+      display: block;
+      color: #333;
+      text-decoration: none;
+    }
+    .show {
+      align-items: center;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s;
+      opacity: 1;
+      visibility: visible;
+      position: absolute;
+      top: 5rem;
+      left: 0;
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      width: 100vw;
+      height: 39rem;
+      z-index: 200;
+    }
+    .submenuCollection > li > a,
+    .submenuNews > li > a {
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      text-decoration: none;
+    }
+    .title_look {
+      margin-top: 5rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .p_look {
+      font-size: 1.7rem;
+      text-align: center;
+    }
+    /*
+  cha ger le bas */
+    .submenuNews,
+    .submenuCollection {
+      align-items: center;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      transition: all 0.3s;
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: rgb(255, 255, 255);
+      max-width: 100vw;
+      height: 39rem;
+      z-index: 200;
+    }
+  
+    .submenuCollection > li,
+    .submenuNews > li {
+      margin: 0;
+      padding: 5px 0;
+    }
+  
+    .actif {
+      transition: all 0.3s;
+      font-weight: 800;
+      color: black;
+    }
+  
+    .opacity a {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 2rem;
+      text-decoration: none;
+    }
+    .opacity {
+      position: absolute;
+      border-radius: 0.25rem;
+      top: -100%;
+      left: 0;
+      z-index: 12;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: all 0.3s;
+    }
+  
+    @keyframes anim {
+      from {
+        background-color: rgb(255, 255, 255);
+      }
+      to {
+        background-color: rgba(255, 255, 255, 0);
+      }
+    }
+  
+    @media screen and (max-width: 1420px) {
+      .show > li > a > div,
+      .submenuCollection > li > a > div,
+      .submenuNews > li > a > div {
+        margin: 0 auto;
+        width: calc(22rem - 5rem);
+        height: 34rem;
+      }
+    }
+  
+    @media screen and (max-width: 1136px) {
+      .submenu_image_1 > ul > ul {
+        width: 90%;
+        padding: 1rem;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  
+    @media screen and (max-width: 1000px) {
+      .menu > li > span > a {
+        display: none;
+      }
+      .title-outift-change-and-desc-outfit > h2 {
+        margin-left: 2rem;
+      }
+      .title-outift-change-and-desc-outfit > p {
+        margin-left: 2.5rem;
+      }
+  
+      html {
+        overflow-x: hidden;
+      }
+      .container-flex-outfit-2 > .item {
+        width: 19rem;
+        height: 35rem;
+      }
+    }
+  </style>
+  
