@@ -902,5 +902,11 @@ cha ger le bas */
   .menu>li>span>a{
     display: none;
   }
-  
+  .title-outift-change-and-desc-outfit > h2{
+    margin-left: 2rem;
+  }
+  .title-outift-change-and-desc-outfit > p{
+    margin-left: 2.5rem;
+  }
+
 }
